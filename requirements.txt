@@ -1,0 +1,7 @@
+kafka-python
+requests
+pymongo
+streamlit
+nltk
+streamlit-autorefresh
+python-dotenv

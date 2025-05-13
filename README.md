@@ -1,27 +1,61 @@
-# Distributed Streaming System with Python and Kafka
+# Real-Time News Analytics Pipeline (Kafka, MongoDB, Streamlit)
 
-This project demonstrates a simple distributed streaming data pipeline using Python and Apache Kafka. It includes a producer that sends messages to a Kafka topic and a consumer that processes those messages in real time.
+This project ingests live news headlines from NewsAPI, streams them through Kafka, stores them in MongoDB, and visualizes real-time analytics on a Streamlit dashboard.
 
 ## Features
-- Python-based Kafka producer and consumer
-- Local Kafka setup (via Docker Compose)
-- Easy to extend for real-world data sources or sinks
+- Real-time news ingestion (NewsAPI)
+- Kafka-based message brokering
+- MongoDB storage
+- Keyword analytics
+- Live dashboard (Streamlit)
+- Docker Compose for local development
+- Environment variable support with `.env`
 
-## Getting Started
-1. Set up Python environment
-2. Start Kafka (recommended: Docker Compose)
-3. Run the producer and consumer scripts
+## Setup & Configuration
 
-## Requirements
-- Python 3.8+
-- Docker (for local Kafka)
-- See `requirements.txt` for Python dependencies
+1. **Clone this repo.**
+2. **Create a `.env` file in the root:**
+   ```
+   NEWS_API_KEY=your_newsapi_key_here
+   ```
+3. **Install dependencies:**
+   ```
+   pip install -r requirements.txt
+   ```
+4. **Start services:**
+   ```
+   docker compose up
+   ```
+5. **Run the producer and consumer:**
+   ```
+   python3 news_producer.py
+   python3 consumer.py
+   ```
+6. **Start the dashboard:**
+   ```
+   streamlit run dashboard.py
+   ```
 
 ## Project Structure
-- `producer.py`: Sends messages to Kafka
-- `consumer.py`: Reads and processes messages from Kafka
-- `docker-compose.yml`: (Optional) For running Kafka locally
+- `news_producer.py`: Fetches news headlines and sends to Kafka (reads API key from `.env`)
+- `consumer.py`: Reads messages from Kafka, stores in MongoDB, performs analytics
+- `dashboard.py`: Streamlit dashboard for real-time analytics
+- `docker-compose.yml`: Runs Kafka, Zookeeper, and MongoDB locally
+- `requirements.txt`: Python dependencies
+- `.env.example`: Example environment variables (no secrets)
+- `screenshots/`: Dashboard images (add your own!)
+
+## Dashboard Screenshot
+
+![Dashboard](screenshots/dashboard.png)
+
+## Security
+- **Never commit your `.env` file or API keys to a public repo.**
+- Add `.env` to your `.gitignore` to keep secrets safe.
+
+## Credits
+- Built with Python, Kafka, MongoDB, Streamlit, NewsAPI, and Docker Compose.
 
 ---
 
-Feel free to extend this project with real data sources, additional processing, or database integration!
+Feel free to extend this project with more analytics, visualizations, or data sources!

@@ -93,39 +93,4 @@ if 'publishedAt_dt' in filtered_df:
 else:
     st.write("No time series data available.")
 
-# --- Map Visualization: Headlines by Source Location ---
-st.header("Headline Map by Source Headquarters")
-source_locations = {
-    "CNN": (33.7490, -84.3880),  # Atlanta, USA
-    "BBC": (51.5074, -0.1278),   # London, UK
-    "The New York Times": (40.7128, -74.0060),
-    "CNBC": (40.7580, -73.9855),
-    "AP News": (40.7128, -74.0060),
-    "Variety": (34.0522, -118.2437),
-    "ABC News": (40.7128, -74.0060),
-    "The Washington Post": (38.9072, -77.0369),
-    "The Seattle Times": (47.6062, -122.3321),
-    "Star Tribune": (44.9778, -93.2650),
-    "GSMArena.com": (42.6977, 23.3219), # Sofia, Bulgaria
-    "The Athletic": (37.7749, -122.4194),
-    "ESPN": (41.7637, -72.6851),
-    # Add more as needed
-}
-
-# Count headlines by source
-map_data = []
-for source, count in filtered_df['source'].value_counts().items():
-    if source in source_locations:
-        lat, lon = source_locations[source]
-        for _ in range(count):
-            map_data.append({'lat': lat, 'lon': lon, 'source': source})
-
-import pandas as pd
-if map_data:
-    map_df = pd.DataFrame(map_data)
-    st.map(map_df[['lat', 'lon']])
-    st.write('Map shows HQ locations of news sources for displayed headlines.')
-else:
-    st.write('No mapped sources found in current filter.')
-
 st.caption("Dashboard auto-refreshes every 10 seconds.")

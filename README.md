@@ -3,9 +3,9 @@
 <div align="center">
   <img width="735" alt="Real-time News Analytics" src="https://github.com/user-attachments/assets/5c7c4d16-5001-4005-905d-808db10124fb" />
 </div>
-
+  <img width="1470" alt="Screenshot 2025-05-14 at 12 59 21 PM" src="https://github.com/user-attachments/assets/6c2918c8-7016-4c9e-a167-4c2ad39668ce" />
 <div align="center">
-  <img width="735" alt="Streamlit Dashboard" src="https://github.com/user-attachments/assets/f415111e-4e2b-4d35-b15c-1b6770b7852d" />
+  
 </div>
 
 This project ingests live **news headlines** from NewsAPI, streams them through **Kafka**, stores them in **MongoDB**, and provides **real-time analytics** on a **Streamlit dashboard**.

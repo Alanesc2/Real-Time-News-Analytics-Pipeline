@@ -50,12 +50,6 @@ This project ingests live **news headlines** from NewsAPI, streams them through 
 - `dashboard.py`: Streamlit dashboard for real-time analytics
 - `docker-compose.yml`: Runs Kafka, Zookeeper, and MongoDB locally
 - `requirements.txt`: Python dependencies
-- `.env.example`: Example environment variables (no secrets)
-- `screenshots/`: Dashboard images (add your own!)
-
-## Security
-- **Never commit your `.env` file or API keys to a public repo.**
-- Add `.env` to your `.gitignore` to keep secrets safe.
 
 ## 🌟Credits
 - Built with Python, Kafka, MongoDB, Streamlit, NewsAPI, and Docker Compose.

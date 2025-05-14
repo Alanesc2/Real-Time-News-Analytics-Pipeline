@@ -79,7 +79,9 @@ else:
 st.header("Headline Sentiment Breakdown")
 if 'sentiment' in filtered_df:
     sentiment_counts = filtered_df['sentiment'].value_counts()
-    st.write(sentiment_counts)
+    sentiment_df = sentiment_counts.reset_index()
+    sentiment_df.columns = ['Sentiment', 'Count']
+    st.dataframe(sentiment_df, hide_index=True)
 else:
     st.write("No sentiment data available.")
 

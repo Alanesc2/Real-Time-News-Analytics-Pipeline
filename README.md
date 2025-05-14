@@ -1,4 +1,4 @@
-# 🚨 **Real-Time News Analytics Pipeline** (Kafka, MongoDB, Streamlit)
+# 📰 **Real-Time News Analytics Pipeline** (Kafka, MongoDB, Streamlit)
 
 <div align="center">
   <img width="735" alt="Real-time News Analytics" src="https://github.com/user-attachments/assets/5c7c4d16-5001-4005-905d-808db10124fb" />
@@ -11,7 +11,7 @@
 This project ingests live **news headlines** from NewsAPI, streams them through **Kafka**, stores them in **MongoDB**, and provides **real-time analytics** on a **Streamlit dashboard**.
 
 ## 🚀 **Features**
-- 📰 **Real-time News Ingestion** using NewsAPI
+- 🚨 **Real-time News Ingestion** using NewsAPI
 - ⚡ **Kafka-based Message Brokering** for scalable data streaming
 - 🗃️ **MongoDB Storage** for news data
 - 🔑 **Keyword Analytics** on live data
